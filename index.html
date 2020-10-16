@@ -140,7 +140,7 @@
                 <img src="img/logo.png" alt="logo photo" class="img-fluid" />
               </div>
               <div class="col-12 col-sm-6 align-self-center">
-                <a href="#form" role="button" class="btn btn-block nav-link btn-warning" data-toggle="tooltip" data-html="true" title="or you can call us on <br> <stronge>+852 1234 5678</stronge>" data-placement="bottom">
+                <a href="#form" role="button" class="btn btn-block nav-link btn-warning" data-placement="bottom" data-toggle="modal" data-target="#reserveModal">
               Reserve Table
               </a>
             </div>
@@ -282,11 +282,17 @@
           </div>
         </div>
       </div>
-      <div class="row row-content align-items-center">
-        <div class="col-12 col-sm-8 offset-sm-2">
-          <div class="card">
-            <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
-            <div class="card-body">
+      <div role="dialog" class="modal fade row row-content align-items-center" id="reserveModal">
+        <div class="col-12 col-sm-8 offset-sm-2 modal-dialog modal-lg" role="content">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">Reserve a Table</h3>
+              <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            </div>
+            
+            <div class="modal-body">
               <form id="form">
                 <div class="form-group row">
                   <div class="col-sm-2">
@@ -325,6 +331,15 @@
                       id="6guests"
                       value="6guests"><label for="" class="form-check-label"> 6</label>
                     </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <div class="col-sm-2">
+                    <label for="">Section</label>
+                  </div>
+                  <div class="col12 col-sm-5 btn-group btn-group-toggle" data-toggle="buttons">
+                    <label for="" class="btn btn-success active"><input type="radio" name="section" checked>Non-Smoking</label>
+                    <label for="" class="btn btn-danger"><input type="radio" name="section">Smoking</label>
                   </div>
                 </div>
                 <div class="form-group row">
@@ -433,10 +448,5 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('[data-toggle="tooltip"]').tooltip();
-      })
-    </script>
   </body>
 </html>
